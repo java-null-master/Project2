@@ -50,22 +50,18 @@
 
 
 	<font face ="Impact" color="gray" size = "20">
-		Membership Application
-	</font>
+		Membership Application</font>
 	</center>
 </head>
 <body >
 <center>
-	<br>
-	<br>
 	<form action ="membership_insert.jsp" method="post">
 	<table  border="0">
 <br><br><br><br>
 		<tr>
 			<td width="150">ID</td>
 			<td align="left">
-				<input type="text" name="id" placeholder="아이디" >
-				&nbsp;
+				<input type="text" name="id" placeholder="아이디" >&nbsp;
 				<input type="button" value=" 중복확인 ">
 				<br><br>
 			</td>
@@ -179,11 +175,7 @@
 		<tr>
 			<td align="center" colspan="2">
 			<br><br><br><br><br><br><br><br>
-			<input type="submit" value="회원가입" />
-			<br><br>
-			</td>
-		</tr>	
-		<tr>
+	<input type="submit" value="회원가입" />
 	<td align="right" colspan="2">
 		<input type="button" value="메인으로" onclick="javascript:window.location='main.jsp'"/></td>
 	</tr>	
