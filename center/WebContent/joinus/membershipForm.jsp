@@ -176,17 +176,18 @@
 				<br><br>
 		</td>
 		</tr>
+		
+		
 		<tr>
 			<td align="center" colspan="2">
 			<br><br><br><br><br><br><br><br>
 			<input type="submit" value="회원가입" />
+			<input type="button" value="메인으로" onclick="javascript:window.location='main.jsp'"/></td>
 			<br><br>
-			</td>
-		</tr>	
-		<tr>
-	<td align="right" colspan="2">
-		<input type="button" value="메인으로" onclick="javascript:window.location='main.jsp'"/></td>
-	</tr>	
+		</td>
+
+		
+	   
 	</table>
 	</form>
 </center>

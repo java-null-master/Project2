@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="center.flowes.loginDAO" %>
+<%@ page import="center.flowers.*" %>
 
 <html>
 <head>
@@ -13,8 +13,8 @@
  <%
  
   	String id = request.getParameter("id");
-  	loginDAO login = loginDAO.getinstance();
-  	int check = login.confirmID(id);
+  	JoinDAO join = JoinDAO.getInstance();
+  	int check = join.confirmId(id);
 
 %>
 

@@ -51,8 +51,8 @@
      
       <br />
       <br />
-      <a href="/NoGom/loginpage.jsp" font-size="15pt" color="black"> 비동의</a>
-      <a href="/NoGom/membershipForm.jsp" font-size="15pt" color="black"> 동의</a><br />
+      <a href="/center/loginpage.jsp" font-size="15pt" color="black"> 비동의</a>
+      <a href="javascript:window.location='/center/membershipForm.kiki" font-size="15pt" color="black"> 동의</a><br />
       <br />
       <br />
 
