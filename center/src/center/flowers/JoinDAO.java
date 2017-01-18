@@ -136,4 +136,25 @@ public class JoinDAO {
 		  		if(conn != null)try{conn.close();}catch(SQLException ex){}
 			}
 		}
-	}
+		
+		
+		
+		public int confirmId(String id) throws Exception {
+			int x = -1;
+			
+			try {
+				conn = getConnection();
+				pstmt = conn.prepareStatement("select id from member where id = ?");
+				pstmt.setString(1, id);
+				rs = pstmt.executeQuery();
+				
+				if(rs.next()) x=1;
+				else x=-1;
+			} catch(Exception e) { e.printStackTrace();	}
+			 finally {
+				 if(rs != null) { try { rs.close(); } catch(SQLException s) { } }
+				 if(pstmt != null) { try { pstmt.close(); } catch(SQLException s) { } }
+				 if(conn != null) { try { conn.close(); } catch(SQLException s) { } }
+			}
+			return x;
+		}}
