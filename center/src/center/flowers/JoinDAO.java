@@ -56,7 +56,7 @@ public class JoinDAO {
 		
 		try{
 			conn =getConnection();
-			pstmt = conn.prepareStatement("select*from join where id =?");
+			pstmt = conn.prepareStatement("select * from join where id =?");
 			pstmt.setString(1, id);
 			rs=pstmt.executeQuery();
 		
@@ -153,8 +153,8 @@ public class JoinDAO {
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(
-					"select id, pw, name, birth, phone, address, email, bankName, bankAcount, lev, regDate , r from"+
-					"(select id, pw, name, birth, phone, address, email, bankName, bankAcount, lev, regDate, rownum r from"+ 
+					"select id, pw, name, birth, phone, address, email, bankName, bankAccount, lev, regDate , r from"+
+					"(select id, pw, name, birth, phone, address, email, bankName, bankAccount, lev, regDate, rownum r from"+ 
 					"(select * from join order by regDate asc) order by regDate asc) where r>=? and r<=?");
 			pstmt.setInt(1, start);
 			pstmt.setInt(2, end);
@@ -165,12 +165,28 @@ public class JoinDAO {
 				
 				while(rs.next()) {
 					JoinDTO article = new JoinDTO();
+					
+					article.setId(rs.getString("id"));
+					article.setPw(rs.getString("pw"));
+					article.setName(rs.getString("name"));
+					article.setBirth(rs.getInt("birth"));
+					article.setPhone(rs.getInt("phone"));
+					article.setAddress(rs.getString("address"));
+					article.setEmail(rs.getString("email"));
+					article.setBankName(rs.getString("bankName"));
+					article.setBankAccount(rs.getInt("bankAccount"));
+					article.setLev(rs.getString("lev"));
+					article.setRegDate(rs.getTimestamp("regDate"));
+					articleList.add(article);
 				}
 			}
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {
-			
+			if(rs != null) { try { rs.close(); } catch(SQLException s) { } }
+			if(pstmt != null) { try { pstmt.close(); } catch(SQLException s) { } }
+			if(conn != null) { try { conn.close(); } catch(SQLException s) { } }
 		}
+		return articleList;
 	}
 }
